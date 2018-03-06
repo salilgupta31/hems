@@ -1,0 +1,121 @@
+
+
+<div class="w-section eb-hero" data-ix="display-nav">
+  <div class="w-container container">
+    <div class="hero-div-block">
+      <div class="content-header white">Energy usage this month</div>
+      <div class="hero-number" id="monthlyCost">$ {{energyCost | number : '.2-2'}}</div>
+      <!-- <div class="hero-small-text-wrapper">
+        <div class="hero-text-small medium">Total amount of energy</div>
+        <div class="hero-text-small">used from&nbsp;</div>
+        <div class="hero-text-small medium" id="dateRange">1st {{monthname}} – {{todaysDate | date}}</div>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+  <div class="w-section cp-button-section" data-ix="display-cp-footer">
+    <div class="w-container container">
+      <div class="centered-text-wrapper">
+        <div class="content-header">Turn off your appliances to reduce the amount of power you are using</div>
+      </div>
+      
+
+      <div>
+        <div class="w-row cp-button-row">
+          
+          <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+            <a class="w-clearfix w-inline-block cp-button" href="#control-AC" data-ix="show-ac-control">
+              <div class="button control-panel"><img class="cp-icon" src="./assets/images/aircon icon.svg" width="100%" alt="">
+              </div>
+              <div class="cp-name">Air Conditioning</div>
+              <div class="cp-status on"></div>
+              <div class="cp-subtitle">{{airCondition | number: '.2-3'}} kW</div>
+            </a>
+          </div>
+          
+          <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+            <a class="w-clearfix w-inline-block cp-button" href="#control-water-heater" data-ix="show-water-heater-control">
+              <div class="button control-panel"><img class="cp-icon" src="./assets/images/water heater icon.svg" width="100%" alt="">
+              </div>
+              <div class="cp-name">Water Heater</div>
+              <div class="cp-status on"></div>
+              <div class="cp-subtitle">{{waterHeater | number: '.2-3'}} kW</div>
+            </a>
+          </div>
+          
+          <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+            <a class="w-clearfix w-inline-block cp-button" href="#control-lighting" data-ix="show-lighting-control">
+              <div class="button control-panel"><img class="cp-icon" src="./assets/images/lighting icon.svg" width="100%" alt="">
+              </div>
+              <div class="cp-name">Lighting</div>
+              <div class="cp-status on"></div>
+              <div class="cp-subtitle">{{lighting | number: '.2-3'}} kW</div>
+            </a>
+          </div>
+          
+          <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+            <a class="w-clearfix w-inline-block cp-button" href="#control-Appliances" data-ix="show-appliances-control">
+              <div class="button control-panel"><img class="cp-icon" src="./assets/images/appliances icon.svg" width="100%" alt="">
+              </div>
+              <div class="cp-name">Appliances</div>
+              <div class="cp-status on"></div>
+              <div class="cp-subtitle">{{appliance | number: '.2-3'}} kW </div>
+            </a>
+          </div>
+
+        </div>     
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+<div class="w-section white-section">
+  <div class="w-container container">
+    <div class="dropdown-sentence">
+      <div class="content-header">Breakdown of total energy consumption </div>
+      <!-- <div class="w-dropdown" data-delay="0">
+        <div class="w-dropdown-toggle dropdown">
+          <div class="dropdown-text" id="selectedNode">room</div>
+          <div class="w-icon-dropdown-toggle"></div>
+        </div>
+        <nav class="w-dropdown-list dropdown-list" id="breakDownList">
+
+        </nav>
+
+      </div> -->
+    </div>
+  </div>
+  <div class="w-container container">
+    <div class="w-embed">
+
+      <div class="w-col w-col-12 compare-box">
+
+        <div class="w-embed" id="chartContainer">
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="w-section footer-container">
+  <div class="w-container container">
+    <div class="footer-wrapper">
+      <div class="footer-text">You are using&nbsp;</div>
+      <div class="footer-text-bold" id="currentEnergy">{{instantPowerkW}}</div>
+      <div class="footer-text">right now</div><a class="button" routerLink="/control">switch off something</a>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/webflow.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/gk-common.js"></script>
+<script type="text/javascript" src="js/gk-energy-breakdown.js"></script>

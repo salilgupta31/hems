@@ -1,0 +1,68 @@
+<!--div class="centered hero-section" [style.height.px]="itemheight" id="loginDiv">
+  <div class="w-container" data-ix="new-interaction">
+    <div class="login-form">
+      <form class="login-form" data-name="Email Form" id="email-form" name="email-form">
+        <label class="login-form-title" for="name">{{ 'LOGIN.LOGIN_HERE' | translate }}</label>
+        <label class="login-form-text" for="Username">{{ 'LOGIN.EMAIL' | translate }}</label>
+        <input class="w-input" data-name="Username" id="inputEmail" maxlength="256" name="inputEmail" placeholder="Username" type="text"
+          required="required" [(ngModel)]="username">
+        <label class="login-form-text" for="Password">{{ 'LOGIN.PASSWORD' | translate }}</label>
+        <input class="w-input" data-name="Password" id="inputPassword" maxlength="256" name="inputcredential" placeholder="Password"
+          required="required" [(ngModel)]="credential" type="password">
+        <div class="w-checkbox w-clearfix">
+          <input class="w-checkbox-input" data-name="Remember Me" id="Remember-Me" name="remeberMecheckbox" type="checkbox" [(ngModel)]="rememberMe">
+          <label class="login-form-text w-form-label" for="Remember-Me">{{ 'LOGIN.REMEMBERME' | translate }}</label>
+        </div>
+        <input class="login-form-button w-button" data-wait="Please wait..." type="submit" value="Submit" (click)="onSubmitClicked()">
+      </form>
+    </div>
+  </div>
+</div-->
+
+
+<br> <br><br>
+<!--div class="cp-divider"></div-->
+<div class="eb-her">
+  <div class="w-container container-step">
+      <div class="">
+                
+        <div class="w-row cp-floorplan-row">
+
+          <div class="w-col w-col-3 w-col-stack ">
+          </div>
+          
+          <div class="w-col w-col-6 w-col-stack ">
+            <img class="logo img-top" style="" src="./assets/images/logo-login.png"  height="" alt="">
+            <br> <br><br> 
+            <form class="login-form" data-name="Email Form" id="email-form" name="email-form">
+              <label class="login-form-title content-header-step" for="name">{{ 'LOGIN.LOGIN_HERE' | translate }}</label>
+              <br><br>
+              <label class="login-form-text" for="Username">{{ 'LOGIN.EMAIL' | translate }}</label>
+              <input class="w-input" data-name="Username" id="inputEmail" maxlength="256" name="inputEmail" placeholder="Username" type="text"
+                required="required" [(ngModel)]="username">
+              <label class="login-form-text" for="Password">{{ 'LOGIN.PASSWORD' | translate }}</label>
+              <input class="w-input" data-name="Password" id="inputPassword" maxlength="256" name="inputcredential" placeholder="Password"
+                required="required" [(ngModel)]="credential" type="password">
+              <div class="w-checkbox w-clearfix">
+                <input class="w-checkbox-input" data-name="Remember Me" id="Remember-Me" name="remeberMecheckbox" type="checkbox" [(ngModel)]="rememberMe">
+                <label class="login-form-text w-form-label" for="Remember-Me">{{ 'LOGIN.REMEMBERME' | translate }}</label>
+              </div>
+              <br>
+              <input class="buttonnew login-form-button w-button" data-wait="Please wait..." type="submit" value="Submit" (click)="onSubmitClicked()">
+            </form>
+          </div>
+
+          <div class="w-col w-col-3 w-col-stack ">
+
+          </div>
+
+
+
+        </div>
+      </div>
+  </div>
+
+</div>
+<br> <br><br>
+
+
