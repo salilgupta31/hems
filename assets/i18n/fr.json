@@ -1,0 +1,12 @@
+{
+  "LOGIN": {
+    "TITLE": "Plusieurs-buildig Tableau de bord!",
+    "SELECT": "Changer de langue",
+    "LOGIN_HERE": "Connectez-vous ic",
+    "EMAIL": "Adresse e-mail",
+    "PASSWORD": "Mot de passe",
+    "REMEMBERME": "Souviens-toi de moi",
+    "SIGNIN": "se connecter",
+    "USERID": "dentifiant d'utilisateur"
+  }
+}
