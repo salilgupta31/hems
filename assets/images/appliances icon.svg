@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>appliances </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="200" height="200"></rect>
+        <linearGradient x1="41.715072%" y1="100%" x2="60.9101015%" y2="22.8670009%" id="linearGradient-3">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="appliances-" sketch:type="MSLayerGroup">
+            <mask id="mask-2" sketch:name="Rectangle 189" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Rectangle-189" stroke="#979797" stroke-width="0.1" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+            <rect id="Rectangle-192" sketch:type="MSShapeGroup" mask="url(#mask-2)" x="0" y="190" width="200" height="10"></rect>
+            <path d="M46.7968752,42.0152588 L153.4375,146.837036 L60.9375002,262.936279 L-52.9687498,167.498657 L46.7968752,42.0152588 Z" id="Rectangle-32" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            <path d="M50.2285767,40.1341392 L57.7285767,36.6966392 L143.521423,36.6966392 L151.021423,40.1341553 L50.2285767,40.1341392 Z" id="Path-41" fill="#D8D8D8" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            <rect id="Rectangle-81" fill="#FFFFFF" sketch:type="MSShapeGroup" mask="url(#mask-2)" x="46.25" y="39.5" width="108.75" height="108.75" rx="4"></rect>
+            <circle id="Oval-21" fill="#BDC3C7" sketch:type="MSShapeGroup" mask="url(#mask-2)" cx="100" cy="94.5" r="50"></circle>
+            <circle id="Oval-19" fill="#ECF0F1" sketch:type="MSShapeGroup" mask="url(#mask-2)" cx="100" cy="94.5" r="43.75"></circle>
+            <rect id="Rectangle-79" fill="#34495E" sketch:type="MSShapeGroup" mask="url(#mask-2)" x="95" y="62" width="10" height="25"></rect>
+            <rect id="Rectangle-78" fill="#34495E" sketch:type="MSShapeGroup" mask="url(#mask-2)" x="112.5" y="102" width="18.75" height="10"></rect>
+            <rect id="Rectangle-77" fill="#34495E" sketch:type="MSShapeGroup" mask="url(#mask-2)" x="68.75" y="102" width="18.75" height="10"></rect>
+        </g>
+    </g>
+</svg>

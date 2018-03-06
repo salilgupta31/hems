@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="21px" viewBox="0 0 13 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>green chevron right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Dashboard-V4.0-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="01.04-Dashboard---Tablet" sketch:type="MSArtboardGroup" transform="translate(-427.000000, -829.000000)" fill="#8BC34A">
+            <g id="Energy-usage-this-month" sketch:type="MSLayerGroup" transform="translate(23.000000, 457.000000)">
+                <path d="M404.855965,391.449355 L405.860605,392.4188 C405.969387,392.562777 406.148559,392.634766 406.292536,392.634766 C406.471707,392.634766 406.615684,392.562777 406.758061,392.4188 L416.094167,383.082694 C416.238144,382.975511 416.310133,382.79634 416.310133,382.652363 C416.310133,382.473191 416.238144,382.29402 416.094167,382.185238 L406.758061,372.849131 C406.615684,372.706754 406.471707,372.634766 406.292536,372.634766 C406.148559,372.634766 405.969387,372.706754 405.860605,372.849131 L404.855965,373.85537 C404.711988,373.962553 404.64,374.141725 404.64,374.285701 C404.64,374.464873 404.711988,374.645644 404.855965,374.752827 L412.718707,382.652363 L404.855965,390.516705 C404.711988,390.659082 404.64,390.803059 404.64,390.98223 C404.64,391.163001 404.711988,391.305378 404.855965,391.449355" id="green-chevron-right" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
