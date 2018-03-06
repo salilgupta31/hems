@@ -1,0 +1,38 @@
+<div id="original-menu" class="scrolling w-nav navbar" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
+  <div class="w-container nav-container">
+    <a class="w-nav-brand" routerLink="/dashboard">
+    <img class="logo img-top" src="./assets/images/GKLogoWhiteTag.png" height="40" alt="552f83eb5af5d0db201235d5_GKLogoWhiteTag.png">
+    </a>
+    <nav class="w-nav-menu nav-menu" role="navigation"[ngStyle]="{'visibility':hamvisibility}">
+      <a class="w-nav-link nav-link fixed" routerLink="/dashboard" data-ajax="false">Dashboard</a>
+      <a class="w-nav-link nav-link fixed" routerLink="/energy" data-ajax="false">Energy Breakdown</a>
+      <a class="w-nav-link nav-link fixed" routerLink="/control" data-ajax="false">Control Panel</a>
+      <a class="w-nav-link nav-link fixed" routerLink="/demand" data-ajax="false">Demand Response</a>
+      <a class="w-nav-link nav-link fixed" routerLink="/login" data-ajax="false">Log Out</a>
+    </nav>
+    <div class="w-nav-button menu-button"[ngStyle]="{'visibility':hamvisibility}">
+      <div class="w-icon-nav-menu hamburger-icon fixed"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
+
+<br>
+<footer class="center footer" id="footer">
+  <div class="w-container">
+    <div class="w-row">
+      <div class="w-col w-col-6">
+        <div class="footer-copyright">
+          <div class="footer-text" style="color:#939597">Copyright Green Koncepts Pte Ltd © 2018</div>
+        </div>
+      </div>
+      <div class="w-col w-col-6 text-right">
+        <img class="footer-logo" height="34px" width="262px" style="margin-top: -10px;" src="./assets/images/Logo_EPS_footer.png">
+        </div>
+    </div>
+  </div>
+  <br>
+</footer>

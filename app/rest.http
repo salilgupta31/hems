@@ -1,0 +1,9 @@
+GET https://test.greenkoncepts.com/ems/services/ResourceService/login?username=michael@fyoozstudio.com&credential=greenkoncepts&callerID=12345&_=1495086213175
+
+GET https://kemap.greenkoncepts.com/ems/services/ResourceService/login?username=uobpm&credential=P@ssw0rd&callerID=12345&_=1495086213175
+
+GET https://test.greenkoncepts.com/ems/services/ResourceService/get-nodes-data?key=44.1495086917.cd824ee0a0d294a1effad3c56acc24f9134dba6&id=0&account=UOB_REPLICA&callerID=12345&_=1495086213175
+
+GET https://kemap.greenkoncepts.com/ems/services/ResourceService/getCommonTypeConsumption?key=44.1495087004.45b43c80417b4985f82f92d6f4e51b81eac62bd&nodeNames=uobp1_UOB_Plaza_1&dataNames=Electric:Energy,Cost,Carbon,Power;&commonTypes=Electric:Lighting,Power,ACMV&beginDate=1495022400000&endDate=1495087200000&type=1&tag=0&callerID=getCommonTypeComsumption
+
+GET https://kemap.greenkoncepts.com/ems/services/ResourceService/getLoadTypeConsumption?key=44.1495087004.45b43c80417b4985f82f92d6f4e51b81eac62bd&nodeNames=uobp1_UOB_Plaza_1&dataNames=Electric:Energy,Cost,Carbon,Power;&loadTypes=Electric:Lighting,Power,ACMV&start=1495022400000&end=1495087200000&callerID=getCommonTypeComsumption
