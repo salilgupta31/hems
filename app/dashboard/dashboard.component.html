@@ -1,0 +1,247 @@
+<div class="w-section hero-section dashboard" data-ix="display-nav">
+  <div class="w-container container">
+      <div class="hero-div-block">
+          <h1 id="welcomeText" class="hero-heading">{{greetingText}},<br>{{userName}}</h1>
+      </div>
+  </div>
+  <div class="w-container container">
+      <div class="hero-div-block">
+          <div class="weather-div">
+              <img class="cloudy" src="./assets/images/cloudy.png" style="width: 50px" alt="cloudy.png">
+              <div class="hero-weather">{{temperatureText}}ºC</div><img class="windy" style="width: 50px" src="./assets/images/Windy.png" alt="Windy.png">
+              <div class="hero-weather">{{windText}} km/h</div>
+          </div>
+          <div id="weatherSuggestionText" class="hero-text">Right now, it’s cool enough to skip the air conditioning and use a fan.</div>
+          <a class="button" routerLink="/control">AUTOMATE&nbsp;&amp; SAVE ENERGY</a>
+      </div>
+  </div>
+</div>
+
+<div class="w-section white-section">
+  <div class="w-container container">
+      <div class="w-row">
+          <div class="w-col w-col-6 card-column">
+              <div class="card">
+                  <div class="content-header">Energy usage this month</div>
+                  <div class="giant-number" id="monthlyCost">${{ energyCost | number:'.2-2'}}</div>
+                  <!-- <p class="bold-body">Total amount of energy</p>
+        <p>used from</p>
+        <p class="bold-body" id="dateMonthStr">1st {{monthName}}</p> -->
+                  <div class="divider-line"></div><a class="flat-button" routerLink="/energy">VIEW ENERGY BREAKDOWN</a><img class="green-chevron-right" src="./assets/images/green_chevron_right.png" alt="green_chevron_right.png">
+              </div>
+          </div>
+          <div class="w-col w-col-6 compare-box">
+              <div class="content-header">How do you compare?</div>
+              <!-- <img class="icon-info" src="./assets/images/info_button.png" alt="info_button.png"> -->
+              <div class="w-embed" id="constContainer"></div>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--<div class="w-section splash-comparison">
+<div class="w-container container">
+  <div class="text-splash">You are using&nbsp;</div>
+  <div class="splash-number more">{{payingMorePercentage}}%&nbsp;</div>
+  <div class="more-energy">more energy</div>
+  <div class="text-splash">than your efficient neighbours</div>
+</div>
+</div>-->
+<div class="w-section white-section">
+  <div class="w-container container">
+      <div class="dropdown-sentence">
+          <div class="content-header">
+
+              <table>
+                  <tr>
+                      <td>
+                          <div>Your energy consumption </div>
+                      </td>
+                      <td>
+                          <div>
+                              <select (change)="onChange($event.target.value)" class="w-dropdown-toggle dropdownNew w--open dropdown-text ">
+                                  <option value="today" class="">Today</option>
+                                  <option value="week" selected class="">This Week</option>
+                                  <option value="year" class="">This Year</option>
+                              </select>
+                              <div class="w-icon-dropdown-toggle"></div>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+
+          <!--<div class="content-header">consumption</div>-->
+
+          <!--      <div class="w-dropdown" data-delay="0">
+      <div class="w-dropdown-toggle dropdown">
+        <div id="dropdown-text-time" (click)="changeChartTimeChange($event)" class="dropdown-text">this week</div>
+        <div class="w-icon-dropdown-toggle"></div>
+      </div>
+      <nav class="w-dropdown-list dropdown-list" id="dropdownlist-time">
+        <a class="w-dropdown-link dropdown-link"  id="today" (click)="changeChartTimeChange($event)">today</a>
+        <a class="w-dropdown-link dropdown-link"  id="week" (click)="changeChartTimeChange($event)">this week</a>
+        <a class="w-dropdown-link dropdown-link"  id="year" (click)="changeChartTimeChange($event)">this year</a>
+      </nav>
+    </div>-->
+
+          <!-- <div class="content-header">for</div>
+    <div class="w-dropdown" data-delay="0">
+      <div class="w-dropdown-toggle dropdown">
+        <div id="dropdown-text-device" class="dropdown-text">all uses</div>
+        <div class="w-icon-dropdown-toggle"></div>
+      </div>
+      <nav class="w-dropdown-list dropdown-list" id="dropdownlist-device">
+        <a class="w-dropdown-link dropdown-link"  onClick="gkc.changeChartDeviceChange('all',event)" id="all">all uses</a>
+        <a class="w-dropdown-link dropdown-link"  onClick="gkc.changeChartDeviceChange('ac',event)" id="ac">air conditioning</a>
+        <a class="w-dropdown-link dropdown-link"  onClick="gkc.changeChartDeviceChange('wh',event)" id="wh">water heating</a>
+        <a class="w-dropdown-link dropdown-link"  onClick="gkc.changeChartDeviceChange('lighting',event)" id="lighting">lighting</a>
+        <a class="w-dropdown-link dropdown-link"  onClick="gkc.changeChartDeviceChange('appliances',event)" id="appliances">appliances</a>
+      </nav>
+    </div> -->
+      </div>
+  </div>
+  <div class="w-container container">
+      <div class="w-embed">
+
+          <div id="consumptionChartDIV"></div>
+      </div>
+  </div>
+  <!--div class="w-section challenge-section">
+  <div class="w-container container">
+    <div class="challenge-circle-text">
+      <div class="challenge-text">You are paying</div>
+      <div class="challenge-text challenge-number">$ {{payingMore}}</div>
+      <div class="challenge-text bold" data-ix="dsplay-number-challenge">more yearly</div>
+    </div>
+    <div class="challenge-button"><a class="button" >Reduce your bill</a>
+      <div class="hero-text">Join the energy challenge and win a round trip to Greece</div>
+    </div>
+  </div>
+</div-->
+
+  <section class="w-container container-step">
+
+      <div class="w-row ">
+          <div class="w-col w-col-12 w-col-stack ">
+              <br>
+              <br>
+              <div class="dr-text">Check out Electricity Tariffs as below</div>
+
+              <ul class="w-list-unstyled">
+
+                  <li class="" data-ix="living-hover">
+                      <div class="">&nbsp;</div>
+
+                      <div class="t-overflown" style="padding-left: 13%;">
+                          <table border="0" class="tariff-package" id="tariffTable" style="width: 99%; margin-left: -2.7%">
+                              <tr>
+                                  <td style="width:40%">
+                                      <p class=" text-dr"></p>
+                                  </td>
+                                  <td class="center-cell">
+                                      <input type="radio" style="margin-left: 6px;" name="radio_" [checked]="isPackage1Active" (click)="(package1Id > 0 && !isPackage1Active) ? highlightSelectedPackage($event,1):false" id="{{package1Id}}">
+                                    <br >
+                                      <p><b>Package 1</b> </p>
+                                  </td>
+                                  <td class="center-cell">
+                                    <input type="radio" style="margin-left: 6px;" name="radio_" [checked]="isPackage2Active" (click)="(package2Id > 0 && !isPackage2Active) ? highlightSelectedPackage($event,2):false" id="{{package2Id}}">
+                                  <br >
+                                    <p><b>Package 2</b> </p>
+                                </td>
+                                <td class="center-cell">
+                                    <input type="radio" style="margin-left: 6px;" name="radio_" [checked]="isPackage3Active" (click)="(package3Id > 0 && !isPackage3Active) ? highlightSelectedPackage($event,3): false" id="{{package3Id}}">
+                                  <br >
+                                    <p><b>Package 3</b> </p>
+                                </td>
+                              </tr>
+                              <tr class="tariff-border">
+                                  <td style="width:40%">
+                                      <p class=" text-dr-t" style="width: 100%;"><b>Peak Rate</b></p>
+                                      <p class="text-li-dr">6AM-9AM, 6PM-10PM</p>
+                                  </td>
+                                  <td #Package11 class="tariff-cell">
+                                      <p class=" text-dr-t">{{peakRateP1}}</p>
+                                  </td>
+                                  <td #Package12 class="tariff-cell">
+                                      <p class=" text-dr-t">{{peakRateP2}}</p>
+                                  </td>
+                                  <td #Package13 class="tariff-cell">
+                                      <p class=" text-dr-t">{{peakRateP3}}</p>
+                                  </td>
+                              </tr>
+
+                              <tr class="tariff-border">
+                                  <td style="width:40%">
+                                      <p class=" text-dr-t" style="width: 100%;"><b>Off-Peak Rate</b></p>
+                                      <p class="text-li-dr">9AM-6PM, 10PM-6AM</p>
+                                  </td>
+                                  <td #Package21 class="tariff-cell">
+                                      <p class=" text-dr-t">{{offPeakRateP1}}</p>
+                                  </td>
+                                  <td #Package22 class="tariff-cell">
+                                      <p class=" text-dr-t">{{offPeakRateP2}}</p>
+                                  </td>
+                                  <td #Package23 class="tariff-cell">
+                                      <p class=" text-dr-t">{{offPeakRateP3}}</p>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+
+                  </li>
+
+                  <!--              <li class="w-clearfix cp-control2" data-ix="living-hover">
+              <div class="control-indicator2">&nbsp;</div>
+
+                <table border="0">
+                <tr>
+                <td style="width:50%"><div class="control-text-step2"><p class=" text-dr">Peak Rate</p></div></td>
+                <td style="width:20%" ><p class=" text-dr">0.5 SGD/kWh</p></td>
+                <td style="width:20%" ><p class=" text-dr">0.5 SGD/kWh</p></td>
+                <td style="width:20%" ><p class=" text-dr">0.5 SGD/kWh</p></td>
+                </tr>
+                <tr>
+                <td><div class="text-step2"><p class="text-li-dr">9AM-6PM, 10PM-6AM weekdays; 10PM-6AM weekends </p></div> </td>
+                <td> </td>
+                </tr>                                    
+                </table>               
+
+            </li>
+
+            <li class="w-clearfix cp-control2" data-ix="living-hover">
+              <div class="control-indicator2">&nbsp;</div>
+
+                <table border="0">
+                <tr>
+                <td><div class="control-text-step2"><p class=" text-dr">Off-Peak Rate</p></div></td>
+                <td><div class="edit-floor-right-dr"><p class=" text-dr">0.5 SGD/kWh</p></div></td>
+                </tr>
+                <tr>
+                <td><div class="text-step2"><p class="text-li-dr">9AM-6PM, 10PM-6AM weekdays; 10PM-6AM weekends</p></div> </td>
+                <td></td>
+                </tr>                                    
+                </table>               
+
+            </li>-->
+
+              </ul>
+              <br>
+              <br>
+          </div>
+      </div>
+
+  </section>
+
+  <div class="w-section footer-container">
+      <div class="w-container container">
+          <div class="footer-wrapper">
+              <div class="footer-text">You are using&nbsp;</div>
+              <div class="footer-text-bold" id="currentEnergy">{{instantPower}}</div>
+              <div class="footer-text">right now</div><a class="button" routerLink="/control">switch off something</a>
+          </div>
+      </div>
+  </div>
+  <app-package-change *ngIf ="showPopUp" (selectPackage)="changeStatus($event)"></app-package-change>
+  <app-message-pop-up *ngIf ="showMessagePopUp" (exit)="messageBox($event)"></app-message-pop-up>

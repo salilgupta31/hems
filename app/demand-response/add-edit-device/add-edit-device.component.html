@@ -1,0 +1,268 @@
+<div class="w-section hero01-section dashboard" data-ix="display-nav">
+    <div class="w-container container">
+        <div class="hero-div-block">
+        </div>
+    </div>
+  </div>
+  
+  <div class="w-section cp-button-dr" data-ix="display-cp-footer">
+    <div class="w-container container-step">
+        <div>
+            <div class="">
+                <div class="w-col w-col-12 w-col-stack ">
+                    <div class="content-header-step">Demand Response Contract</div>
+                    <div class="content-step step-margin">
+                        <br> Kindly check the DR plans as below</div>
+  
+                    <ul class="w-list-unstyled">
+                        <li class="w-clearfix cp-control2" data-ix="living-hover">
+                            <div class="control-indicator2">&nbsp;</div>
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="control-text-step2">
+                                                <p class=" text-dr">Contracted Power Curtailment</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="edit-floor-right-dr">
+                                                <p class=" text-dr">{{contractedPower}} kW</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+  
+                        <li class="w-clearfix cp-control2" data-ix="living-hover">
+                            <div class="control-indicator2">&nbsp;</div>
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="control-text-step2">
+                                                <p class=" text-dr">Current Power Consumption</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="edit-floor-right-dr">
+                                                <p class=" text-dr">{{instantPower | number: '.2-2'}} kW</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="text-step2">
+                                                <p class="text-li-dr"></p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div><section class="w-container container-step">
+  
+      <div class="w-row ">
+          <div class="w-col w-col-12 w-col-stack ">
+              <div class="content-header-step">
+                  <br>
+                  <br>Selected Devices</div>
+              <div class="content-step step-margin">
+                  <br> Check on "Participating" boxes below to select devices for upcoming DR events.</div>
+          </div>
+  
+          <div class="w-col w-col-12 w-col-stack ">
+              <table border="0">
+                  <tr>
+                      <td>
+                      </td>
+                  </tr>
+              </table>
+
+              <ul class="w-list-unstyled cp-floorplan-row">
+                  <li class="w-clearfix cp-control-dr" data-ix="living-hover">
+                      <div class="control-indicator-dr">&nbsp;</div>
+                      <table border="0">
+                          <tr>
+                              <td>
+                                  <div class="control-text-step2">
+                                      <p>Air Conditioner</p>
+                                  </div>
+                              </td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="text-step2">
+                                      <p class="text-li">{{airCondition | number : '.2-2'}} kW</p>
+                                  </div>
+                              </td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                            <td *ngIf="isAirCondition">
+                                <div class="buttondiv-dr"><a class="buttonnew-dr" href="">PARTICIPATING</a></div>
+                            </td>
+                            <td *ngIf="!isAirCondition">
+                                <div class="buttondiv-dr"><a class="buttonnew-dr" href="" style="color:#B72323;">NOT PARTICIPATING</a></div>
+                            </td>
+                              <td>
+                                  <input type="checkbox" class="checkboxFour" (click)="changeParticipation($event)" id="airCondition">
+                              </td>
+                          </tr>
+                      </table>
+                  </li>
+
+                  <li class="w-clearfix cp-control-dr" data-ix="living-hover">
+                      <div class="control-indicator-dr">&nbsp;</div>
+                      <table border="0">
+                          <tr>
+                              <td>
+                                  <div class="control-text-step2">
+                                      <p>Water Heater</p>
+                                  </div>
+                              </td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="text-step2">
+                                      <p class="text-li">{{waterHeater | number : '.2-2'}} kW</p>
+                                  </div>
+                              </td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                            <td *ngIf="isWaterHeater">
+                                <div class="buttondiv-dr"><a class="buttonnew-dr" href="">PARTICIPATING</a></div>
+                            </td>
+                            <td *ngIf="!isWaterHeater">
+                                <div class="buttondiv-dr"><a class="buttonnew-dr" href="" style="color:#B72323;">NOT PARTICIPATING</a></div>
+                            </td>
+                              <td>
+                                  <input type="checkbox" class="checkboxFour" (click)="changeParticipation($event)" id="waterHeater">
+                              </td>
+                          </tr>
+                      </table>
+                  </li>
+  
+                  <li class="w-clearfix cp-control-dr" data-ix="living-hover">
+                      <div class="control-indicator-dr">&nbsp;</div>
+                      <table border="0">
+                          <tr>
+                              <td>
+                                  <div class="control-text-step2">
+                                      <p>Lighting</p>
+                                  </div>
+                              </td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="text-step2">
+                                      <p class="text-li">{{lighting | number : '.2-2'}} kW</p>
+                                  </div>
+                              </td>
+                              <td> </td>
+                          </tr>
+                          <tr>
+                              <td *ngIf="isLighting">
+                                  <div class="buttondiv-dr"><a class="buttonnew-dr" href="">PARTICIPATING</a></div>
+                              </td>
+                              <td *ngIf="!isLighting">
+                                  <div class="buttondiv-dr"><a class="buttonnew-dr" href="" style="color:#B72323;">NOT PARTICIPATING</a></div>
+                              </td>
+                              <td>
+                                  <input type="checkbox" class="checkboxFour" (click)="changeParticipation($event)" id="lighting">
+                              </td>
+                          </tr>
+                      </table>
+                  </li>
+
+                  <li class="w-clearfix cp-control-dr" data-ix="living-hover">
+                      <div class="control-indicator-dr">&nbsp;</div>
+                      <table border="0">
+                          <tr>
+                              <td>
+                                  <div class="control-text-step2">
+                                      <p>Smart Plug</p>
+                                  </div>
+                              </td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="text-step2">
+                                      <p class="text-li">{{appliance | number : '.2-2'}} kW</p>
+                                  </div>
+                              </td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                            <td *ngIf="isAppliance">
+                                <div class="buttondiv-dr"><a class="buttonnew-dr" href="">PARTICIPATING</a></div>
+                            </td>
+                            <td *ngIf="!isAppliance">
+                                <div class="buttondiv-dr"><a class="buttonnew-dr" href="" style="color:#B72323;">NOT PARTICIPATING</a></div>
+                            </td>
+                              <td>
+                                  <input type="checkbox" class="checkboxFour" (click)="changeParticipation($event)" id="appliance">
+                              </td>
+                          </tr>
+                      </table>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </section>
+  
+  <section class="w-container container-step">
+      <div class="w-col w-col-12 w-col-stack ">
+          <div class="margin-dr">
+              <table border="0">
+                  <tr>
+                      <td>
+                          <div class="control-text-step2">
+                              <p class=" text-dr-total">Participating Power Curtailment</p>
+                          </div>
+                      </td>
+                      <td *ngIf="instantPower > 4">
+                          <div class="edit-floor-right-dr">
+                              <p class=" text-dr-total green-text">{{instantPower | number: '.2-2'}} kW <img class="" src="./assets/images/tick.png" height="16px" width="20px"></p>
+                          </div>
+                      </td>
+                      <td *ngIf="instantPower < 5">
+                        <div class="edit-floor-right-dr">
+                            <p class=" text-dr-total green-text"  style="color:#B72323;">{{instantPower | number: '.2-2'}} kW <img class="" src="./assets/images/cross.png" height="16px" width="20px"></p>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td *ngIf="instantPower > 4">
+                          <div class="text-step2">
+                              <p class="text-li-dr">This amount is sufficient for forthcoming DR event at 2PM tomorrow.</p>
+                          </div>
+                      </td>
+                      <td *ngIf="instantPower < 5">
+                            <div class="text-step2">
+                                <p class="text-li-dr">This amount is not sufficient for forthcoming DR event at 2PM tomorrow.</p>
+                            </div>
+                    </td>
+                      <td>
+                          <div class="edit-floor-right-dr2">
+                              <p class="l-green-text text-li-dr"></p>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+  </section>
+  <app-message-pop-up *ngIf ="showMessagePopUp" (exit)="messageBox($event)"></app-message-pop-up>

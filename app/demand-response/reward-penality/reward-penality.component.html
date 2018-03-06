@@ -1,0 +1,81 @@
+<section class="w-container container-step">
+  
+      <div class="w-row ">
+          <div class="w-col w-col-12 w-col-stack ">
+              <div class="content-header-step">Demand Response Incentives and Penalties</div>
+              <div class="content-step step-margin">
+                  <br> Filter and see your Incentives/Penalties.</div>
+          </div>
+  
+          <div class="w-section white-section">
+              <div class="w-container container">
+                  <div class="dropdown-sentence">
+                      <div class="content-header">
+                          <table>
+                              <tr>
+                                  <td>
+                                      <div>Your Incentives </div>
+                                  </td>
+                                  <td>
+                                      <div>
+                                          <select (change)="onChange($event.target.value)" class="w-dropdown-toggle dropdownNew w--open dropdown-text ">
+                                              <!-- <option value="today" class="">Today</option> -->
+                                              <option value="week" selected class="">This Week</option>
+                                              <option value="year" class="">This Year</option>
+                                          </select>
+                                          <!-- <div class="w-icon-dropdown-toggle"></div> -->
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+              <div class="w-container container">
+                  <div class="w-embed">
+                      <div id="consumptionChartDIV">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="w-container container-step">
+      <div class="w-col w-col-12 w-col-stack ">
+          <div class="margin-dr">
+              <table border="0">
+                  <tr>
+                      <td>
+                          <div class="control-text-step2">
+                              <p class=" text-dr-total">Total Incentives</p>
+                          </div>
+                      </td>
+                      <td *ngIf="totalIncentives < 0">
+                          <div class="edit-floor-right-dr">
+                              <p class=" text-dr-total green-text" style="color:#B72323;">{{totalIncentives | number : '.2-2'}} </p>
+                          </div>
+                      </td>
+                      <td *ngIf="totalIncentives >= 0">
+                        <div class="edit-floor-right-dr">
+                            <p class=" text-dr-total green-text">${{totalIncentives | number : '.2-2'}} </p>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <div class="text-step2">
+                              <p class="text-li-dr">Accumulated amount of incentive since participating.</p>
+                          </div>
+                      </td>
+                      <td>
+                          <div class="edit-floor-right-dr2">
+                              <p class="l-green-text text-li-dr"></p>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+  </section>
+  <app-message-pop-up *ngIf ="showMessagePopUp" (exit)="messageBox($event)"></app-message-pop-up>
