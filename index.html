@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HEMS</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/hems.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/gk.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Montserrat:400,700", "Roboto:300,regular,500,700", "Roboto Condensed:regular,700", "Roboto Slab:300,regular", "Montserrat Alternates:regular,700", "Montserrat Subrayada:regular,700"]
+      }
+    });
+
+  </script>
+  <script type="text/javascript" src="./assets/js/modernizr.js"></script>
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/placeholder/favicon.ico"> -->
+  <!-- <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png"> -->
+
+
+  <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/js/webflow.js"></script>
+  <script type="text/javascript" src="./assets/js/Chart.min.js"></script>
+  <script type="text/javascript" src="./assets/js/highcharts.js"></script>
+  <script src="./assets/js/highcharts-more.js"></script>
+  <!--<script type="text/javascript" src="./assets/js/gk-common.js"></script>
+  <script type="text/javascript" src="./assets/js/gk-dashboard.js"></script>-->
+</head>
+
+<body>
+  <app-root>Loading...</app-root>
+  <script>
+    $(document).ready(function () {
+      var scroll_start = 0;
+      var startchange = $('.scrolling');
+      var offset = startchange.offset();
+      $(document).scroll(function () {
+        scroll_start = $(this).scrollTop();
+        if (scroll_start > offset.top) {
+          $('.scrolling').css('background', '#ffffff');
+          $('.scrolling').css('box-shadow', '0px 4px 6px -6px #222');
+          $('.scrolling').css('-webkit-box-shadow', '0px 4px 6px -6px #222');
+          $('.scrolling').css('-moz-box-shadow', '0px 4px 6px -6px #222');
+          $('.nav-link').css('color', '#333333');
+          $('.menu-dropDownSymbol').css('color', '#333333');
+          $('.hamburger-menu-icon').css('color', '#333333');
+          // $('.scrolling').css('background', '#282828');
+          // $('.scrolling').css('box-shadow', '0px 4px 6px -6px #222');
+          // $('.scrolling').css('-webkit-box-shadow', '0px 4px 6px -6px #222');
+          // $('.scrolling').css('-moz-box-shadow', '0px 4px 6px -6px #222');
+          // $('.navigation-link').css('color', '#333333');
+          // $('.menu-dropDownSymbol').css('color', '#333333');
+
+        } else {
+          $('.scrolling').css('background', 'transparent');
+          $('.scrolling').css('box-shadow', '0px 0px 0px 0px #222');
+          $('.scrolling').css('-webkit-box-shadow', '0px 0px 0px 0px #222');
+          $('.scrolling').css('-moz-box-shadow', '0px 0px 0px 0px #222');
+          $('.nav-link').css('color', '#ffffff');
+          $('.menu-dropDownSymbol').css('color', '#ffffff');
+          $('.hamburger-menu-icon').css('color', '#ffffff');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
