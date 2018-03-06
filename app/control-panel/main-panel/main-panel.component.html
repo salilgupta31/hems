@@ -1,0 +1,384 @@
+<div class="w-section cp-hero">
+  <div class="w-container container">
+    <div class="hero-div-block">
+      <div class="content-header white">You are using</div>
+      <div class="hero-number">{{instantPower | number : '2.0-2'}} kW</div>
+      <div class="centered-text-wrapper">
+        <div class="hero-text-small medium">right now</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-section cp-button-section" data-ix="display-cp-footer">
+  <div class="w-container container">
+    <div class="centered-text-wrapper">
+      <div class="content-header">Turn off your appliances to reduce the amount of power you are using</div>
+    </div>
+    <div>
+      <div class="w-row cp-button-row">
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button" href="#control-AC" data-ix="show-ac-control" (click)="onControlACClicked()">
+            <div class="button control-panel">
+              <img class="cp-icon" src="./../../assets/images/aircon icon.svg" width="100%" alt="552e288ddd570aca7d672933_aircon%20icon.svg">
+            </div>
+            <div class="cp-name">Air Conditioning</div>
+            <div class="cp-status on"></div>
+            <div class="cp-subtitle">{{acUsgaeNumber | number : '2.0-2'}} kW ({{acUsgaePercentage}}%)</div>
+          </a>
+        </div>
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button" href="#control-water-heater" data-ix="show-water-heater-control" (click)="onControlWHClicked()">
+            <div class="button control-panel">
+              <img class="cp-icon" src="./../../assets/images/water heater icon.svg" width="100%" alt="552e28a4b7486858729462a3_water%20heater%20icon.svg">
+            </div>
+            <div class="cp-name">Water Heater</div>
+            <div class="cp-status off"></div>
+            <div class="cp-subtitle">{{lightUsgaeNumber | number : '2.0-2'}} kW ({{lightUsgaePercentage}}%)</div>
+          </a>
+        </div>
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button" href="#control-lighting" data-ix="show-lighting-control" (click)="onControlLHClicked()">
+            <div class="button control-panel">
+              <img class="cp-icon" src="./../../assets/images/lighting icon.svg" width="100%" alt="552e28f7dd570aca7d672942_lighting%20icon.svg">
+            </div>
+            <div class="cp-name">Lighting</div>
+            <div class="cp-status on"></div>
+            <div class="cp-subtitle">{{waterHeaterUsgaeNumber | number : '2.0-2'}} kW ({{waterHeaterUsgaePercentage}}%)</div>
+          </a>
+        </div>
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button" href="#control-Appliances" data-ix="show-appliances-control" (click)="onControlAPClicked()">
+            <div class="button control-panel">
+              <img class="cp-icon" src="./../../assets/images/appliances icon.svg" width="100%" alt="552e29028f4602c87dfc8f17_appliances%20icon.svg">
+            </div>
+            <div class="cp-name">Appliances</div>
+            <div class="cp-status on"></div>
+            <div class="cp-subtitle">{{applianceUsgaeNumber | number : '2.0-2'}} kW ({{applianceUsgaePercentage}}%)</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="w-section control-section">
+  <div class="w-container control-ac" id="control-AC" data-ix="initial-control" [ngStyle]="{'display':styleForAC}">
+    <div>
+      <img class="w-hidden-small w-hidden-tiny cp-pointer ac" src="./../../assets/images/Triangle.svg" alt="552e3b158f4602c87dfc9239_Triangle.svg">
+      <div class="cp-divider"></div>
+    </div>
+    <div>
+      <div class="content-header">Air Conditioning&nbsp;</div>
+      <div class="content-number">2.081 kW (63%)</div>
+    </div>
+    <div class="control-div">
+      <div class="w-row cp-floorplan-row">
+        <div class="w-col w-col-8 w-col-stack w-hidden-small w-hidden-tiny">
+
+          <div class="floorplan-wrapper">
+            <div class="floorplan">
+              <img class="mainbed-on" src="./../../assets/images/mainbed on.svg" alt="5530a35b67a89d4a26dfde9b_mainbed%20on.svg" data-ix="mainbed-hover">
+              <img class="mainbed-focus" src="./../../assets/images/mainbed focus.svg" alt="5530a36638615e9e376d302b_mainbed%20focus.svg">
+              <img class="living-on" src="./../../assets/images/living on.svg" alt="5530a3dc67a89d4a26dfdea8_living%20on.svg">
+              <img class="living-focused" src="./../../assets/images/living focus.svg" alt="5530a3e538615e9e376d3037_living%20focus.svg"
+                data-ix="living-hover">
+              <img class="bed3-on" src="./../../assets/images/bed3 on.svg" alt="5530a476468f96a1375fba51_bed3%20on.svg">
+              <img class="bed3-focused" src="./../../assets/images/bed3 focus.svg" alt="5530a480468f96a1375fba52_bed3%20focus.svg">
+              <img class="bed3-off" src="./../../assets/images/bed3 off.svg" alt="5530a48cf2553c4926c61d5f_bed3%20off.svg">
+              <img class="mainbed-off" src="./../../assets/images/mainbed off.svg" alt="5530a3b4f2553c4926c61d45_mainbed%20off.svg">
+              <img class="living-off" src="./../../assets/images/living off.svg" alt="5530a461f2553c4926c61d4b_living%20off.svg" data-ix="living-hover">
+              <img class="outline" src="./../../assets/images/outline.svg" height="100%" alt="552f6f54836806ae15a275d7_outline.svg">
+              <a class="w-inline-block mainbed-hotspot" href="#mainbed-switch" data-ix="mainbed-hover">
+                    <img src="./../../assets/images/mainbedroom focus.svg" alt="552f50590f9117dc2081948c_mainbedroom%20focus.svg">
+                  </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="w-col w-col-4 w-col-stack switch-column">
+          <ul class="w-list-unstyled">
+            <li class="w-clearfix cp-control" data-ix="bed3-hover">
+              <div class="control-indicator">&nbsp;</div>
+              <div class="bed3-indicator">&nbsp;</div>
+              <div class="bed3-indicator-off">&nbsp;</div>
+              <div class="control-text">Bedroom 3</div>
+              <div class="w-clearfix bed3-switch" data-ix="bed3-toggle">
+                <img class="bed3-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.831 kW</div>
+            </li>
+            <li class="w-clearfix cp-control" data-ix="living-hover">
+              <div class="control-indicator">&nbsp;</div>
+              <div class="living-indicator">&nbsp;</div>
+              <div class="living-indicator-off">&nbsp;</div>
+              <div class="control-text">Living Room</div>
+              <div class="living-switch" data-ix="living-toggle">
+                <img class="living-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.672 kW</div>
+            </li>
+            <li class="w-clearfix cp-control" id="mainbed-switch" data-ix="mainbed-hover">
+              <div class="control-indicator">&nbsp;</div>
+              <div class="mainbed-indicator">&nbsp;</div>
+              <div class="mainbed-indicator-off">&nbsp;</div>
+              <div class="control-text">Main Bedroom</div>
+              <div class="mainbed-switch" data-ix="mainbed-toggle">
+                <img class="mainbed-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.578 kW</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w-section control-section">
+  <div class="w-container control-water-heater" id="control-water-heater" data-ix="initial-control" [ngStyle]="{'display':styleForWaterHeater}">
+    <div><img class="w-hidden-small w-hidden-tiny cp-pointer wh" src="./../../assets/images/Triangle.svg" alt="552e3b158f4602c87dfc9239_Triangle.svg">
+      <div class="cp-divider"></div>
+    </div>
+    <div>
+      <div class="content-header">Water Heater</div>
+      <div class="content-number">0 kW (0%)</div>
+    </div>
+    <div class="control-div">
+      <div class="w-row cp-floorplan-row">
+        <div class="w-col w-col-8 w-col-stack w-hidden-small w-hidden-tiny">
+          <div class="floorplan-wrapper">
+            <div class="floorplan"><img class="outline" src="./../../assets/images/outline.svg" height="100%" alt="552f6f54836806ae15a275d7_outline.svg">
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4 w-col-stack switch-column">
+          <ul class="w-list-unstyled">
+            <li class="w-clearfix cp-control" data-ix="bed3-hover">
+              <div class="control-indicator disabled">&nbsp;</div>
+              <div class="control-text">Bath 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <div class="bed3-switch" data-ix="bed3-toggle"></div>
+              <div class="control-number">0 kW</div>
+            </li>
+            <li class="w-clearfix cp-control" data-ix="living-hover">
+              <div class="control-indicator disabled">&nbsp;</div>
+              <div class="control-text">Bath 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <div class="living-switch" data-ix="living-toggle"></div>
+              <div class="control-number">0 kW</div>
+            </li>
+            <li class="w-clearfix cp-control" data-ix="living-hover">
+              <div class="control-indicator disabled">&nbsp;</div>
+              <div class="control-text">Kitchen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <div class="living-switch" data-ix="living-toggle"></div>
+              <div class="control-number">0 kW</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w-section control-section">
+  <div class="w-container control-appliances" id="control-Appliances" data-ix="initial-control" [ngStyle]="{'display':styleForAppliances}">
+    <div><img class="w-hidden-small w-hidden-tiny cp-pointer app" src="./../../assets/images/Triangle.svg" alt="552e3b158f4602c87dfc9239_Triangle.svg">
+      <div class="cp-divider"></div>
+    </div>
+    <div>
+      <div class="content-header">Appliances</div>
+      <div class="content-number">0.803 kW (24%)</div>
+    </div>
+    <div class="control-div">
+      <div class="w-row cp-floorplan-row">
+        <div class="w-col w-col-8 w-col-stack w-hidden-small w-hidden-tiny">
+          <div class="floorplan-wrapper">
+            <div class="floorplan"><img class="mainbed-on" src="./../../assets/images/mainbed on.svg" alt="5530a35b67a89d4a26dfde9b_mainbed%20on.svg"
+                data-ix="mainbed-hover">
+              <img class="mainbed-focus" src="./../../assets/images/mainbed focus.svg" alt="5530a36638615e9e376d302b_mainbed%20focus.svg">
+              <img class="living-on" src="./../../assets/images/living on.svg" alt="5530a3dc67a89d4a26dfdea8_living%20on.svg">
+              <img class="living-focused" src="./../../assets/images/living focus.svg" alt="5530a3e538615e9e376d3037_living%20focus.svg"
+                data-ix="living-hover">
+              <img class="bed3-on" src="./../../assets/images/bed3 on.svg" alt="5530a476468f96a1375fba51_bed3%20on.svg">
+              <img class="bed3-focused" src="./../../assets/images/bed3 focus.svg" alt="5530a480468f96a1375fba52_bed3%20focus.svg">
+              <img class="bed3-off" src="./../../assets/images/bed3 off.svg" alt="5530a48cf2553c4926c61d5f_bed3%20off.svg">
+              <img class="mainbed-off" src="./../../assets/images/mainbed off.svg" alt="5530a3b4f2553c4926c61d45_mainbed%20off.svg">
+              <img class="living-off" src="./../../assets/images/living off.svg" alt="5530a461f2553c4926c61d4b_living%20off.svg" data-ix="living-hover">
+              <img class="outline" src="./../../assets/images/outline.svg" height="100%" alt="552f6f54836806ae15a275d7_outline.svg">
+              <a class="w-inline-block mainbed-hotspot" href="#mainbed-switch"><img src="./../../assets/images/mainbedroom focus.svg" alt="552f50590f9117dc2081948c_mainbedroom%20focus.svg" data-ix="mainbed-hover">
+                      </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4 w-col-stack switch-column">
+          <ul class="w-list-unstyled">
+            <li class="w-clearfix cp-control" data-ix="bed3-hover">
+              <div class="control-indicator">&nbsp;</div>
+              <div class="bed3-indicator">&nbsp;</div>
+              <div class="bed3-indicator-off">&nbsp;</div>
+              <div class="control-text">Bedroom 3</div>
+              <div class="w-clearfix bed3-switch" data-ix="bed3-toggle"><img class="bed3-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.831 kW</div>
+            </li>
+            <li class="w-clearfix cp-control" data-ix="living-hover">
+              <div class="control-indicator">&nbsp;</div>
+              <div class="living-indicator">&nbsp;</div>
+              <div class="living-indicator-off">&nbsp;</div>
+              <div class="control-text">Living Room</div>
+              <div class="living-switch" data-ix="living-toggle"><img class="living-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.672 kW</div>
+            </li>
+            <li class="w-clearfix cp-control" id="mainbed-switch" data-ix="mainbed-hover">
+              <div class="control-indicator">&nbsp;</div>
+              <div class="mainbed-indicator">&nbsp;</div>
+              <div class="mainbed-indicator-off">&nbsp;</div>
+              <div class="control-text">Main Bedroom</div>
+              <div class="mainbed-switch" data-ix="mainbed-toggle"><img class="mainbed-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.578 kW</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w-section control-section">
+  <div class="w-container control-lighting" id="control-lighting" data-ix="initial-control" [ngStyle]="{'display':styleForLighting}">
+    <div><img class="w-hidden-small w-hidden-tiny cp-pointer l" src="./../../assets/images/Triangle.svg" alt="552e3b158f4602c87dfc9239_Triangle.svg">
+      <div class="cp-divider"></div>
+    </div>
+    <div>
+      <div id="lighting-control-text" class="content-header">Lighting</div>
+      <div class="content-number">0.420 kW (13%)</div>
+    </div>
+    <div class="control-div">
+      <div class="w-row cp-floorplan-row">
+        <div class="w-col w-col-8 w-col-stack w-hidden-small w-hidden-tiny">
+          <div class="floorplan-wrapper">
+            <div class="floorplan">
+              <img class="mainbed-on" src="./../../assets/images/mainbed on.svg" alt="5530a35b67a89d4a26dfde9b_mainbed%20on.svg">
+              <img class="mainbed-focus" src="./../../assets/images/mainbed focus.svg" alt="5530a36638615e9e376d302b_mainbed%20focus.svg">
+              <img class="living-on" src="./../../assets/images/living on.svg" alt="5530a3dc67a89d4a26dfdea8_living%20on.svg">
+              <img class="living-focused" src="./../../assets/images/living focus.svg" alt="5530a3e538615e9e376d3037_living%20focus.svg">
+              <img class="bed3-on" src="./../../assets/images/bed3 on.svg" alt="5530a476468f96a1375fba51_bed3%20on.svg">
+              <img class="bed3-focused" src="./../../assets/images/bed3 focus.svg" alt="5530a480468f96a1375fba52_bed3%20focus.svg">
+              <img id="bed3-off" class="bed3-off" src="./../../assets/images/bed3 off.svg" alt="5530a48cf2553c4926c61d5f_bed3%20off.svg">
+              <img id="mainbed-off" class="mainbed-off" src="./../../assets/images/mainbed off.svg" alt="5530a3b4f2553c4926c61d45_mainbed%20off.svg">
+              <img id="living-off" class="living-off" src="./../../assets/images/living off.svg" alt="5530a461f2553c4926c61d4b_living%20off.svg">
+              <img class="outline" src="./../../assets/images/outline.svg" height="100%" alt="552f6f54836806ae15a275d7_outline.svg">
+              <a class="w-inline-block mainbed-hotspot" href="#mainbed-switch-Lighting" data-ix="mainbed-hover"><img src="./../../assets/images/mainbedroom focus.svg" alt="552f50590f9117dc2081948c_mainbedroom%20focus.svg">
+              </a>
+              <a class="w-inline-block living-hotspot" href="#living-switch" data-ix="living-hover"><img src="./../../assets/images/living focus.svg" alt="5530a3e538615e9e376d3037_living%20focus.svg">
+              </a>
+              <a class="w-inline-block bed3-hotspot" href="#bed3-switch" data-ix="bed3-hover"><img src="./../../assets/images/bed3 focus.svg" alt="5530a480468f96a1375fba52_bed3%20focus.svg">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4 w-col-stack switch-column">
+          <ul id="control-ul" class="w-list-unstyled">
+            <li id="li-column-bed3" class="w-clearfix lighting-list" id="bed3-switch" data-ix="bed3-hover">
+              <div class="control-indicator l">&nbsp;</div>
+              <div class="bed3-indicator l">&nbsp;</div>
+              <div id="bed3-indicator-off" class="bed3-indicator-off l">&nbsp;</div>
+              <div id="bedroom-3-text" class="control-text">Bedroom 3</div>
+              <div class="w-clearfix bed3-switch" data-ix="bed3-toggle">
+                <img id="bedroom-3-toggle-image" class="bed3-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.139 kW</div>
+              <div class="w-embed slider-placeholder">
+                <input type="range" name="bed3" id="bed3-slider" min="0" max="100" data-highlight="true" value="0">
+              </div>
+            </li>
+            <li id="li-column-living" class="w-clearfix lighting-list" id="living-switch" data-ix="living-hover">
+              <div class="control-indicator l">&nbsp;</div>
+              <div class="living-indicator l">&nbsp;</div>
+              <div id="living-indicator-off" class="living-indicator-off l">&nbsp;</div>
+              <div id="living-room-text" class="control-text">Living Room</div>
+              <div class="living-switch" data-ix="living-toggle"><img id="living-toggle" class="living-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.193 kW</div>
+              <div class="w-embed slider-placeholder">
+                <input type="range" name="living" id="living-slider" min="0" max="100" data-highlight="true" value="0">
+              </div>
+            </li>
+            <li id="li-column-mainbed" class="w-clearfix lighting-list" id="mainbed-switch-Lighting" data-ix="mainbed-hover">
+              <div class="control-indicator l">&nbsp;</div>
+              <div class="mainbed-indicator l">&nbsp;</div>
+              <div id="mainbed-indicator-off" class="mainbed-indicator-off l">&nbsp;</div>
+              <div id="main-bedroom-text" class="control-text">Main Bedroom</div>
+              <div class="mainbed-switch" data-ix="mainbed-toggle"><img id="mainbed-toggle" class="mainbed-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+              </div>
+              <div class="control-number">0.088 kW</div>
+              <div class="w-embed slider-placeholder">
+                <input type="range" name="mainbed" id="mainbed-slider" min="0" max="100" data-highlight="true" value="0">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="w-section w-hidden-small w-hidden-tiny cp-footer" data-ix="display-none-footer">
+  <div class="w-container w-hidden-small w-hidden-tiny container">
+    <div>
+      <div class="w-row cp-button-row">
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button footer" href="#control-AC" data-ix="show-ac-control">
+            <div class="button control-panel footer"><img class="cp-icon footer" src="./../../assets/images/aircon icon.svg" alt="552e288ddd570aca7d672933_aircon%20icon.svg">
+            </div>
+            <div class="cp-name footer">Air Conditioning</div>
+            <div class="cp-status on footer"></div>
+            <div class="cp-subtitle footer">2.081 kW (63%)</div>
+          </a>
+        </div>
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button footer" href="#control-water-heater" data-ix="show-water-heater-control">
+            <div class="button control-panel footer"><img class="cp-icon footer" src="./../../assets/images/water heater icon.svg" width="100%" alt="552e28a4b7486858729462a3_water%20heater%20icon.svg">
+            </div>
+            <div class="cp-name footer">Water Heater&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="cp-status off footer"></div>
+            <div class="cp-subtitle footer">0 kW (0%)</div>
+          </a>
+        </div>
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button footer" href="#control-lighting" data-ix="show-lighting-control">
+            <div class="button control-panel footer"><img class="cp-icon footer" src="./../../assets/images/lighting icon.svg" width="100%" alt="552e28f7dd570aca7d672942_lighting%20icon.svg">
+            </div>
+            <div class="cp-name footer">Lighting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="cp-status on footer"></div>
+            <div class="cp-subtitle footer">0.420 kW (13%)</div>
+          </a>
+        </div>
+        <div class="w-col w-col-3 w-col-small-6 cp-button-wrapper">
+          <a class="w-clearfix w-inline-block cp-button footer" href="#control-Appliances" data-ix="show-appliances-control">
+            <div class="button control-panel footer"><img class="cp-icon footer" src="./../../assets/images/appliances icon.svg" width="100%" alt="552e29028f4602c87dfc8f17_appliances%20icon.svg">
+            </div>
+            <div class="cp-name footer">Appliances&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="cp-status on footer"></div>
+            <div class="cp-subtitle footer">0.803 kW (24%)</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<script id="lighting-template" type="text/x-handlebars-template">
+  {{#each this}}
+  <li class="w-clearfix lighting-list" id="{{name}}-switch" data-ix="{{name}}-hover">
+    <div class="control-indicator l">&nbsp;</div>
+    <div class="bed3-indicator l">&nbsp;</div>
+    <div class="bed3-indicator-off l">&nbsp;</div>
+    <div class="control-text">{{displayName}}</div>
+    <div class="w-clearfix bed3-switch" data-ix="{{name}}-toggle"><img class="{{name}}-toggle" src="./../../assets/images/toggle on.jpg" alt="552f657c0f9117dc20819700_toggle%20on.jpg">
+    </div>
+    <div class="control-number">0.139 kW</div>
+    <div class="w-embed slider-placeholder">
+      <input id="test" type="range">
+    </div>
+  </li>
+  {{/each}}
+</script>-->

@@ -1,0 +1,333 @@
+<!--div class="w-section cp-button-section-step" data-ix="display-cp-footer">
+
+<div class="w-container container-step">
+  <div>
+    <div class="">
+
+      <div class="content-header-step">Add devices</div>
+      <div class="content-step step-margin"> <br> Drag and drop device icons to highlighted room respectively</div>
+
+      <div class="w-col w-col-12 w-col-stack ">
+        <ul class="step-ul">
+          <li> <a href="setup-room.html">            
+                <span class="round-tab-gray" id="btnStep1">1</span> </a>
+            <div class="step-divider-gray"></div>
+          </li>
+
+          <li> <a href="setup-device.html">                
+                <span class="round-tab-green" id="btnStep1">2</span> </a>
+            <div class="step-divider-green"></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w-section">
+        <div class="w-container container-step">
+
+          <div>
+            <div class="w-row cp-button-row-step">
+
+              <div class="w-col w-col-3 w-col-small-3 cp-button-wrapper">
+                <a class="w-clearfix w-inline-block cp-button" href="#control-AC" data-ix="show-ac-control">
+                  <div class="button control-panel"><img class="cp-icon" src="images/aircon icon.svg" width="100%" alt="552e288ddd570aca7d672933_aircon%20icon.svg">
+                  </div>
+                  <div class="cp-name-step">Air-Con</div>
+
+                </a>
+              </div>
+
+              <div class="w-col w-col-3 w-col-small-3 cp-button-wrapper">
+                <a class="w-clearfix w-inline-block cp-button" href="#control-water-heater" data-ix="show-water-heater-control">
+                  <div class="button control-panel"><img class="cp-icon" src="images/water heater icon.svg" width="100%" alt="552e28a4b7486858729462a3_water%20heater%20icon.svg">
+                  </div>
+                  <div class="cp-name-step">Water Heater</div>
+
+                </a>
+              </div>
+
+              <div class="w-col w-col-3 w-col-small-3 cp-button-wrapper">
+                <a class="w-clearfix w-inline-block cp-button" href="#control-lighting" data-ix="show-lighting-control">
+                  <div class="button control-panel"><img class="cp-icon" src="images/lighting icon.svg" width="100%" alt="552e28f7dd570aca7d672942_lighting%20icon.svg">
+                  </div>
+                  <div class="cp-name-step">Lighting</div>
+
+                </a>
+              </div>
+
+              <div class="w-col w-col-3 w-col-small-3 cp-button-wrapper">
+                <a class="w-clearfix w-inline-block cp-button" href="#control-Appliances" data-ix="show-appliances-control">
+                  <div class="button control-panel"><img class="cp-icon" src="images/appliances icon.svg" width="100%" alt="552e29028f4602c87dfc8f17_appliances%20icon.svg">
+                  </div>
+                  <div class="cp-name-step">Appliances</div>
+
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="w-col w-col-12 w-col-stack ">
+          <div class="step-line-gray"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div-->
+
+<!-- 
+
+ -->
+
+ <div class="w-section hero01-section dashboard" data-ix="display-nav">
+    <div class="w-container container">
+        <div class="hero-div-block">
+        </div>
+    </div>
+</div>
+<section class="w-container container-step">
+    <div class="">
+        <div class="w-row cp-floorplan-row">
+
+            <div class="w-col w-col-12 w-col-stack ">
+                <div class="cp-divider"></div>
+                <br>
+            </div>
+            <div class="w-col w-col-8 w-col-stack ">
+                <div class="content-header-step">{{floorPlan}}
+                    <div class="edit-fp-right"></div>
+                </div>
+                <div class="content-step step-margin">
+                    <br> Click on each room to view devices</div>
+
+                <div class="floorplan-wrapper-step scaleable-wrapper" id="scaleable-wrapper">
+                    <div class="very-specific-design" id="very-specific-design">
+                        <!-- Floor Plan 1 -->
+                        <div class="floorplan" *ngIf ="plan1"><img class="image0" src="./assets/images/Floor-Plan-3.png">
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 3.9%;/*14%;*/left: 30%;">
+                                <img id="Bedroom 2" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto; top: 3.9%;/*14%;*/left: 30%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 40.5%;top:0%; ">
+                                <img id="Bath2" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto;left: 40.5%;top:0%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55.5%;top:3.9%; ">
+                                <img id="Bedroom 3" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto;left: 55.5%;top:3.9%; "> </a>
+
+                            <!--grey circles below-->
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55.5%;top:24%; ">
+                                <img id="Open Court" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto;left: 55.5%;top:24%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55.5%;top:46%; ">
+                                <img id="Dining Room" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto;left: 55.5%;top:46%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55.5%;top:66%; ">
+                                <img id="Living Room" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto;left: 55.5%;top:66%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 19.8%;left: 30%;">
+                                <img id="Family Area" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto; top: 19.8%;left: 30%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 34.3%;left: 34.5%;">
+                                <img id="Kitchen" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto; top: 34.3%;left: 34.5%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 49.5%;left: 34.5%;">
+                                <img id="Master Bedroom" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto; top: 49.5%;left: 34.5%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 62%;left: 32.5%;">
+                                <img id="Bath1" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto; top: 62%;left: 32.5%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 75%;left: 34.5%;">
+                                <img id="Utilities Room/Study Room" class="image1 showme" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="" style="width: 18%; margin: 0 auto; top: 75%;left: 34.5%; "> </a>
+
+                        </div>
+                        <!-- Floor Plan 2 -->
+                        <div class="floorplan" *ngIf ="plan2"><img class="image0" src="./assets/images/Floor-Plan02.png">
+                            <!--a href="http://www.google.com" ><img class="image2" src="images/bed1.png" alt="Mountain View" style="width: 35%; margin: 0 auto; "> </a-->
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 4%;left: 30%;">
+                                <img class="image1 showme" id="Bedroom 2" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto; top:4%;left: 30%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 40.5%;top:0%; ">
+                                <img class="image1 showme" id="Bath2" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 40.5%;top:0%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55%;top:4%; ">
+                                <img class="image1 showme" id="Bedroom 3" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 55%;top:4%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 33%;top:23%; ">
+                                <img class="image1 showme" id="Master Bedroom" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 33%;top:26%; "> </a>
+
+
+                        <a class="showhim">
+                            <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55%;top:24%; ">
+                            <img class="image1 showme" id="Kitchen" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 55%;top:28%; "> </a>
+
+                        <a class="showhim">
+                            <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55%;top:50.5%; ">
+                            <img class="image1 showme" id="Living Room" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 56%;top:60%; "> </a>
+
+                        <a class="showhim">
+                            <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 34.5%;top:40%; ">
+                            <img class="image1 showme" id="Bath1" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 34.5%;top:47%; "> </a>
+
+                        <a class="showhim">
+                            <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 34.5%;top:64%; ">
+                            <img class="image1 showme" id="Utilities" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 35%;top:66%; "> </a>
+                        </div>
+                        <!-- Floor Plan 3 -->
+                        <div class="floorplan" *ngIf ="plan3"><img class="image0" src="./assets/images/Floor-Plan01.png">
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto; top: 12%;left: 30%;">
+                                <img class="image1 showme" id="Master Bedroom" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto; top:14%;left: 30.5%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 38%;top:0%; ">
+                                <img class="image1 showme" id="Bath2" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 38%;top:0%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55%;top:3.5%; ">
+                                <img class="image1 showme" id="Utilities" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 55.5%;top:3.5%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55%;top:22.5%; ">
+                                <img class="image1 showme" id="Bedroom" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 55%;top:25%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 55%;top:61%; ">
+                                <img class="image1 showme" id="Kitchen" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 55%;top:55%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 59%;top:70%; ">
+                                <img class="image1 showme" id="Bath1" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 59%;top:74.5%; "> </a>
+
+                            <a class="showhim">
+                                <img class="image1" src="./assets/images/empty.png" style="width: 18%; margin: 0 auto;left: 34.5%;top:45.5%; ">
+                                <img class="image1 showme" id="Living Room" (click)="selectNode($event, true)" src="./assets/images/circle-g.png" alt="Mountain View" style="width: 18%; margin: 0 auto;left: 35%;top:53%; "> </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--div class="floorplan-wrapper-step">
+                        <div class="floorplan"><img class="" src="./assets/images/Semi-detached-floor-plan.png" >
+
+                        </div>
+                      </div-->
+            </div>
+
+            <div class="w-col w-col-4 w-col-stack ">
+                <div class="content-header-step">{{roomName}}</div>
+                <div class="content-step step-margin" *ngIf="hasDevice">
+                    <br> List of Devices
+                </div>
+                <br>
+                <div class="content-step step-margin" *ngIf="!hasDevice">
+                    <br> No devices to display. <br> Hover over other rooms to see devices.
+                </div>
+                <ul id="myDIV" class="w-list-unstyled">
+
+                    <li class="w-clearfix cp-control" data-ix="living-hover" *ngFor="let value of lightingSwitchControlData; let i = index">
+                        <div class="control-indicator">&nbsp;</div>
+                        <div class="living-indicator">&nbsp;</div>
+                        <div class="living-indicator-off">&nbsp;</div>
+                        <div class="control-text">
+                            <p class="plength">{{value.title}}</p>
+                        </div>
+                        <div class="living-switch" data-ix="living-toggle">
+                            <img (click)="handleDeviceStatus($event,'lightSwitch')" id="{{value.name}}" src="./assets/images/toggle on.jpg" alt="">
+                        </div>
+                        <!-- <div class="control-number"><p>{{lightingValue}} kW</p></div> -->
+                    </li>
+
+                    <li class="w-clearfix cp-control" data-ix="living-hover" id="appliance">
+                        <div class="control-indicator">&nbsp;</div>
+                        <div class="living-indicator">&nbsp;</div>
+                        <div class="living-indicator-off">&nbsp;</div>
+                        <div class="control-text">
+                            <p class="plength">{{applianceLabel}}</p>
+                        </div>
+                        <div class="living-switch" data-ix="living-toggle">
+                            <img class="living-toggle" id="{{applianceData}}" (click)="handleDeviceStatus($event,'appliance')" src="./assets/images/toggle on.jpg" alt="">
+                        </div>
+                        <!-- <div class="control-number"><p>{{applianceValue}} kW</p></div> -->
+                    </li>
+                    <li id="li-column-bed3" class="w-clearfix ac-dr" data-ix="bed3-hover">
+                        <div class="control-indicator-ac l">&nbsp;</div>
+                        <div class="ac-dr-indicator l">&nbsp;</div>
+                        <div id="bed3-indicator-off" class="bed3-indicator-off l">&nbsp;</div>
+                        <div id="bedroom-3-text" class="control-text">
+                            <p class="plength">{{airConditionLabel}}</p>
+                        </div>
+                        <div class="w-clearfix bed3-switch" data-ix="bed3-toggle">
+                            <img id="bedroom-3-toggle-image" class="bed3-toggle" id="{{airConditionData}}" (click)="handleDeviceStatus($event,'aircon')" src="./assets/images/toggle on.jpg" alt="">
+                        
+                        </div>
+                        <div  class="ac-margin">
+                            <img class="image-ac" src="./assets/images/increase.png" id="{{airConditionData}}" (click)="handleDeviceStatus($event, 'increase')" height="25px" width="25px"  title="Increase Temperature"> 
+                            <p id="temperature">18</p><p>ºC</p>
+                            <img class="image-ac" src="./assets/images/decrease.png" id="{{airConditionData}}" (click)="handleDeviceStatus($event, 'decrease')" height="25px" width="25px"  title="Decrease Temperature">
+                            <!--input type="range" name="bed3" id="bed3-slider" min="0" max="100" data-highlight="true" value="0"><p class="text-li"></p-->
+                        </div>
+                        <!-- <div class="control-number"><p>{{airConditionValue}} kW</p></div> -->
+                    </li>
+                    <!-- <li>
+                <div class="cp-divider"></div>
+                <div id="" class="control-text "><p class="text-16"><b>Entire Unit Usage:</b></p></div>
+                <div class="control-text "><p class="text-16">{{entireUnitUsage | number : '.2-3'}} kW</p></div>
+                <div id="" class="control-text "><p class="text-16"><b>Room Appliances:</b></p></div>
+                <div class="control-text "><p class="text-16">{{airConditionValue}} kW</p></div>                
+
+              </li> -->
+                </ul>
+
+                <!-- <ul id="myDIV" class="w-list-unstyled" *ngIf="hasDevice_1">
+              <li id="li-column-bed3" class="w-clearfix ac-dr" data-ix="bed3-hover">
+                <div class="control-indicator-ac l">&nbsp;</div>
+                <div class="ac-dr-indicator l">&nbsp;</div>
+                <div id = "bed3-indicator-off" class="bed3-indicator-off l">&nbsp;</div>
+                <div id="bedroom-3-text" class="control-text"><p  class="plength">{{airConditionLabel}}</p></div>
+                <div  class="w-clearfix bed3-switch" data-ix="bed3-toggle">
+                   <img id="bedroom-3-toggle-image" class="bed3-toggle" id ="acOn" *ngIf ="acOn" (click)="handleDeviceStatus($event)" src="./assets/images/toggle on.jpg" alt="">
+                   <img id="bedroom-3-toggle-image" class="bed3-toggle" id ="acOff" *ngIf ="acOff" (click)="handleDeviceStatus($event)" src="./assets/images/toggle off.jpg" alt="">
+                </div>
+                 <div class="control-number"><p>{{airConditionValue}} kW</p></div>
+                <div class="w-embed slider-placeholder-ac">
+                  <img class="image-ac" src="./assets/images/increase.png" height="30px" width="30px"  title="Increase Temperature"> <p class="ac-input" style="">18 C</p> <img class="image-ac" src="./assets/images/decrease.png" height="30px" width="30px"  title="Decrease Temperature">
+                  <!--input type="range" name="bed3" id="bed3-slider" min="0" max="100" data-highlight="true" value="0"><p class="text-li"></p-->
+                <!-- </div>
+
+              </li>
+              <li>
+                <div class="cp-divider"></div>
+                <div id="" class="control-text "><p class="text-16"><b>Entire Unit Usage:</b></p></div>
+                <div class="control-text "><p class="text-16">{{entireUnitUsage | number : '.2-3'}} kW</p></div>
+                <div id="" class="control-text "><p class="text-16"><b>Room Appliances:</b></p></div>
+                <div class="control-text "><p class="text-16">{{airConditionValue}} kW</p></div>                
+
+              </li>
+
+            </ul> -->
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<app-message-pop-up *ngIf ="showMessagePopUp" (exit)="messageBox($event)"></app-message-pop-up>
